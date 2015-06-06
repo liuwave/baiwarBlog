@@ -34,6 +34,7 @@ class CheckLangBehavior {
         $langSet = C('DEFAULT_LANG');
         $varLang =  C('VAR_LANGUAGE',null,'l');
         $langList = C('LANG_LIST',null,'zh-cn');
+        var_dump(C("DEFAULT_LANG"));
         // 启用了语言包功能
         // 根据是否启用自动侦测设置获取语言选择
         if (C('LANG_AUTO_DETECT',null,true)){
@@ -55,9 +56,9 @@ class CheckLangBehavior {
         define('LANG_SET',strtolower($langSet));
 
         // 读取框架语言包
-        //var_dump($_GET[$varLang]);
-        //var_dump(C('LANG_AUTO_DETECT',null,true));
-        //var_dump(THINK_PATH.'Lang/'.LANG_SET.'.php');
+        var_dump($_GET[$varLang]);
+        var_dump(C('LANG_AUTO_DETECT',null,true));
+        var_dump(THINK_PATH.'Lang/'.LANG_SET.'.php');
         $file   =   THINK_PATH.'Lang/'.LANG_SET.'.php';
         if(LANG_SET != C('DEFAULT_LANG') && is_file($file))
             L(include $file);

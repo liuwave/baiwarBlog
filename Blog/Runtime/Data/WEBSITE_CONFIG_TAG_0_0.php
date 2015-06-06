@@ -1,1 +1,0 @@
-a:2:{s:12:"DEFAULT_LANG";s:5:"zh-cn";s:4:"test";s:2:"ss";}

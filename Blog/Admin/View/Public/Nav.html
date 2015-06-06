@@ -32,7 +32,7 @@ $admin=$db->where('id=1')->getField('nickname');
                     <li><a href="{:U('/Admin/Settings')}">{$Think.lang.Basic_config}</a></li>
                     <li><a href="{:U('/Admin/Picture')}">{$Think.lang.Picture}</a></li>
                     <li><a href="{:U('/Admin/Template')}">{$Think.lang.Surface}</a></li>
-                    <li><a href="{:U('/Admin/Lang')}?l={$Think.config.LANG_LIST}">{$Think.lang._Language_}</a></li>
+                    <li><a href="{:U('/Admin/Lang')}?l={$Think.config.DEFAULT_LANG}">{$Think.lang._Language_}</a></li>
                      
 
                 </ul>
