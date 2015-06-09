@@ -17,13 +17,12 @@ use Think\Controller;
             $data=$user->find($id);
 
             $this->user=$data;
-
-            C(get_website_config());
-
             $code=strtolower(CONTROLLER_NAME);
 
+            $this->assign("settingArray",get_websit_config_by_code($code));
+            //var_dump($code);
 
-            $this->assign($code."_setting",get_websit_config_by_code($code));
+
 
 			
         }

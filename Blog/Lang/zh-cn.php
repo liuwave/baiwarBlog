@@ -68,13 +68,14 @@ return array(
 	
 	
 	'Basic_set'=>'基本配置',
-	'Blog_name'=>'博客名称',
-	'Blog_subtitle'=>'博客副标题',
-	'Blog_keywords'=>'博客关键词',
-	'Blog_description'=>'博客描述',
-	'Blog_copyright'=>'版权信息',
 	'Update_set'=>'更新配置',
-	
+
+    "3_BLOGNAME"=>"网站名称",
+    "3_SUBTITLE"=>"网站副标题",
+    "3_KEYWORDS"=>"网站关键词",
+    "3_DESCRIPTION"=>"网站描述",
+    "3_COPY"=>"网站版权信息",
+
 	
 	
 	
@@ -89,7 +90,7 @@ return array(
 	'Chinese_tw'=>'繁体中文',
 	'Japanese'=>'日本语',
 	'lang_enlish'=>'Enlish',
-	
+	'1_DEFAULT_LANG'=>'默认语言',
 	
 	
 	
@@ -138,9 +139,12 @@ return array(
 	
 	
 	/*Template*/
-	'Blog_theme'=>'模版主题',
-	'Home_page'=>'首页分页',
-	'List_page'=>'列表分页',
+	'5_TEMPLATENAME'=>'模版主题',
+	'5_PAGESIZE'=>'首页分页',
+	'5_LISTPAGESIZE'=>'列表分页',
+
+
+
 	
 	/*Database*/
 	'In_backup'=>'立即备份',

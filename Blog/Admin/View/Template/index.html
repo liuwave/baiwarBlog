@@ -6,17 +6,46 @@
   <div class="page-header">
     <h3>{$Think.lang.Surface}</h3>
   </div>
-  <form class="form-horizontal" role="form" method="post" action="{:U('Update')}" id="forms">
-    <div class="MiniBox2">
-      <label for="exampleInputEmail1">{$Think.lang.Blog_theme}</label>
-      <input type="text" class="form-control miniinput" name="template" value="{$Think.config.template}">
-      <label for="exampleInputEmail1">{$Think.lang.Home_page}</label>
-      <input type="text" class="form-control miniinput"  name="PAGESIZE" value="{$Think.config.PAGESIZE}">
-      <label for="exampleInputEmail1">{$Think.lang.List_page}</label>
-      <input type="text" class="form-control miniinput" name="LISTPAGESIZE" value="{$Think.config.LISTPAGESIZE}">
-      <button type="submit" class="btn btn-info " >{$Think.lang.Update_set}</button>
-    </div>
-  </form>  
+
+    <empty name="settingArray">
+
+        <h3> 没有设置项</h3>
+
+        <else />
+        <form class="form-horizontal" role="form" method="post" action="{:U('Update')}" id="forms">
+
+            <div class="MiniBox2">
+
+                <foreach name="settingArray" item="vo" key="k" >
+
+                    <in name="vo.type" value="text,number">
+                        <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                        <input type="{$vo.type}" class="form-control miniinput" name="{$vo.code}" value="{$vo.value}">
+                    </in>
+
+
+                    <if condition="$vo.type eq 'select'">
+                        <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                        <select class="form-control miniinput2" name="{$vo.code}" selected="{$vo.value}">
+                            <foreach name="vo.store_range" item="vo1">
+                                <option value="{$vo1}">{$vo1}</option>
+                            </foreach>
+                        </select>
+
+                    </if>
+
+
+
+
+                </foreach>
+
+                <button type="submit" class="btn btn-info ">{$Think.lang.Update_set}</button>
+            </div>
+        </form>
+
+
+    </empty>
+
   <include file="Public:Copy" />
   </div>
 <script src="[!Public]Js/jquery.form.js"></script> 

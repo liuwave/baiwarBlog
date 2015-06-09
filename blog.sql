@@ -1,20 +1,19 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306exit 
-Source Server Version : 50516
+Source Server         : localhost_3306
+Source Server Version : 50616
 Source Host           : localhost:3306
 Source Database       : blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50516
+Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-06-06 17:40:05
+Date: 2015-06-09 20:34:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `l_admin`
 -- ----------------------------
@@ -88,11 +87,12 @@ CREATE TABLE `l_comment` (
   `time` int(11) DEFAULT NULL,
   `couname` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`coid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_comment
 -- ----------------------------
+INSERT INTO `l_comment` VALUES ('1', '1', 'liuwave@qq.com', 'new', null, null, '1433850937', '1111');
 
 -- ----------------------------
 -- Table structure for `l_menu`
@@ -144,15 +144,22 @@ CREATE TABLE `l_website_config` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_website_config
 -- ----------------------------
 INSERT INTO `l_website_config` VALUES ('1', '0', 'lang', 'group', '', '', '', '1');
 INSERT INTO `l_website_config` VALUES ('2', '0', 'picture', 'group', '', '', '', '1');
-INSERT INTO `l_website_config` VALUES ('3', '0', 'setting', 'group', '', '', '', '1');
+INSERT INTO `l_website_config` VALUES ('3', '0', 'settings', 'group', '', '', '', '1');
 INSERT INTO `l_website_config` VALUES ('4', '0', 'tags', 'group', '', '', '', '1');
-INSERT INTO `l_website_config` VALUES ('5', '0', 'temp', 'group', '', '', '', '1');
-INSERT INTO `l_website_config` VALUES ('6', '1', 'DEFAULT_LANG', 'select', 'zh-cn,en-us,zh-tw,ja-jp', '', 'zh-tw', '1');
-INSERT INTO `l_website_config` VALUES ('7', '1', 'test', 'select', 'z,s,ss', '', 'ss', '1');
+INSERT INTO `l_website_config` VALUES ('5', '0', 'template', 'group', '', '', '', '1');
+INSERT INTO `l_website_config` VALUES ('6', '1', 'DEFAULT_LANG', 'select', 'zh-cn,en-us,zh-tw,ja-jp', '', 'zh-cn', '1');
+INSERT INTO `l_website_config` VALUES ('8', '3', 'blogName', 'text', '', '', '白袜儿的个人主页', '1');
+INSERT INTO `l_website_config` VALUES ('9', '3', 'subtitle', 'text', '', '', '白袜儿的个人主页', '2');
+INSERT INTO `l_website_config` VALUES ('10', '3', 'description', 'text', '', '', '这是白袜儿的个人主页', '4');
+INSERT INTO `l_website_config` VALUES ('11', '3', 'copy', 'text', '', '', '© 2014 www.baiwar.com All Rights Reserved.Theme by', '5');
+INSERT INTO `l_website_config` VALUES ('13', '3', 'keywords', 'text', '', '', '白娃儿', '3');
+INSERT INTO `l_website_config` VALUES ('14', '5', 'templateName', 'select', 'Default', '', 'Default', '1');
+INSERT INTO `l_website_config` VALUES ('15', '5', 'PAGESIZE', 'number', '', '', '8', '1');
+INSERT INTO `l_website_config` VALUES ('16', '5', 'LISTPAGESIZE', 'number', '', '', '20', '1');

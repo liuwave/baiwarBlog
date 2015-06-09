@@ -6,12 +6,19 @@ class SettingsController extends CommonController {
         $this->display('index');
     }
     public function Update() {
-        $confpath = \Think\Storage::put(APP_PATH . 'Common/Conf/Settings.php', '<?php return  ' . var_export($_POST, true) . ';', 'F');
-        if ($confpath == true) {
+
+        $data=I("post.");
+
+        //var_dump($data);
+
+
+        if(update_website_config($data)){
+
             $this->success('<p>修改配置成功！</p>');
         } else {
-            $this->error('<p>修改配置失败，请检查这个目录下的0777权限</p>');
+            $this->error('<p>修改配置失败</p>');
         }
+
     }
 }
 

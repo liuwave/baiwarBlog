@@ -1,23 +1,26 @@
 <?php
-$tempconfig = require('./Blog/Common/Conf/Temp.php');
-$webconfig = require('./Blog/Common/Conf/Settings.php');
+//$tempconfig = require('./Blog/Common/Conf/Temp.php');
+//$webconfig = require('./Blog/Common/Conf/Settings.php');
+$tempconfig=get_website_config(0,5);
+$webconfig=get_website_config(0,3);
 $dbconfig = require('./config.inc.php');
+//var_dump($tempconfig);
 $config =  array(
 
    'LOG_RECORD' => false,
    'LOG_EXCEPTION_RECORD'  =>  false,   
 
     
-	 'DEFAULT_THEME'    =>    C('template'),
+	'DEFAULT_THEME'    =>   $tempconfig['templateName'],
 
 
 	'VIEW_PATH'=>'./Template/',
 	
 	'TMPL_PARSE_STRING'=>array(     
 	'[!TEMPLATE]'=>TMPL_PATH.'',
-	'[!CSS]'=>__ROOT__.'/Template/'.$tempconfig['template'].'/Style/Css/',
-	'[!JS]'=>__ROOT__.'/Template/'.$tempconfig['template'].'/Style/Js/',
-	'[!IMG]'=>__ROOT__.'/Template/'.$tempconfig['template'].'/Style/Img/',
+	'[!CSS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Css/',
+	'[!JS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Js/',
+	'[!IMG]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Img/',
 	'--URL--'=>__ROOT__,
 	  ),
 	  

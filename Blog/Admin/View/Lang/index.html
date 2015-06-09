@@ -6,7 +6,7 @@
         <div class="page-header">
             <h3>{$Think.lang._Language_}</h3>
         </div>
-        <empty name="lang_setting">
+        <empty name="settingArray">
 
             <h3> 没有设置项</h3>
 
@@ -15,10 +15,15 @@
 
                     <div class="MiniBox2">
 
-                        <foreach name="lang_setting" item="vo" key="k" >
+                        <foreach name="settingArray" item="vo" key="k" >
+                            <in name="vo.type" value="text,number">
+                                <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                                <input type="{$vo.type}" class="form-control miniinput" name="{$vo.code}" value="{$vo.value}">
+                            </in>
+
                             <if condition="$vo.type eq 'select'">
-                                <label for="">{:L($vo['code'])}{$Think.lang.lang_Modify}</label>
-                                <select class="form-control miniinput2" name="{$vo.code}" selected="{$Think.config.DEFAULT_LANG}">
+                                <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                                <select class="form-control miniinput2" name="{$vo.code}" selected="{$vo.value}">
 
                                     <foreach name="vo.store_range" item="vo1">
                                         <option value="{$vo1}">{$vo1}</option>
