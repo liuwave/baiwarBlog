@@ -1,34 +1,13 @@
-﻿<include file="./Template/Default/header.html" />
+﻿<include file="Public:header" />
 <body>
-<header id="header" class="clearfix">
-  <div class="container">
-    <div class="col-group">
-      <div class="site-name"> <a id="logo" href="__ROOT__"> {$Think.config.blogname} </a>
-        <h1>{$Think.config.blogname}</h1>
-      </div>
-      <div>
-        <nav id="nav-menu" class="clearfix">
-          <foreach name='menu' item='m'> 
-          <a class="
-          <if condition='($m.mname eq 首页)'>current</if>" href="{$m.url}"  title="{$m.mname}">{$m.mname}</a> 
-          </foreach>
-        </nav>
-        
-      </div>
-    </div>
-  </div>
-</header>
+<include file="Public:nav" />
 <div id="body">
-
-
-
   <div class="container">
     <div class="col-group">
       <div class="col-8" id="main">
         <div class="res-cons">
           <foreach name='list' item='list'>
             <article class="post">
-              <header>
               <h2 class="post-title"> <a href="{:U('/content/'.$list['aid'])}">{$list.title}</a> </h2>
               </heaer>
               <date class="post-meta"> {$list.time|date='F,d Y',###} | <a href="{:U('/List/'.$list['cid'])}">{$list.cname}</a> </date>

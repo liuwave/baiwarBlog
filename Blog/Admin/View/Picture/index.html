@@ -7,20 +7,53 @@
   <div class="page-header">
     <h3>{$Think.lang.Picture}</h3>
   </div>
-  <form class="form-horizontal" role="form" method="post" action="{:U('Update')}" id="forms">
-    <div class="MiniBox2">
-      <label for="exampleInputEmail1">{$Think.lang.Picture}{$Think.lang.Format}</label>
-      <!--|implode=',',###-->
-      <input type="text" class="form-control miniinput" name="mi_exts" value="{$Think.config.mi_exts}">
-   <label for="exampleInputEmail1">{$Think.lang.Picture}{$Think.lang.Size}</label>
-      <input type="text" class="form-control miniinput"  name="mi_maxSize" value="{$Think.config.mi_maxSize}">
-      <!--   <label for="exampleInputEmail1">{$Think.lang.Picture}{$Think.lang.Maximumwidth}</label>
-      <input type="text" class="form-control miniinput" name="mi_thumbMaxWidth" value="{$Think.config.mi_thumbMaxWidth}">
-      <label for="exampleInputEmail1">{$Think.lang.Picture}{$Think.lang.Maximumheight}</label>
-      <input type="text" class="form-control miniinput" name="mi_thumbMaxHeight" value="{$Think.config.mi_thumbMaxHeight}">-->
-      <button type="submit" class="btn btn-info ">{$Think.lang._update_}{$Think.lang.Picture}{$Think.lang.Config}</button>
-    </div>
-  </form>
+
+
+    <empty name="settingArray">
+
+        <h3> 没有设置项</h3>
+
+        <else />
+        <form class="form-horizontal" role="form" method="post" action="{:U('Update')}" id="forms">
+
+            <div class="MiniBox2">
+
+                <foreach name="settingArray" item="vo" key="k" >
+                    <in name="vo.type" value="text,number">
+                        <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                        <input type="{$vo.type}" class="form-control miniinput" name="{$vo.code}" value="{$vo.value}">
+                    </in>
+
+                    <if condition="$vo.type eq 'select'">
+                        <label for="">{:L($vo['parent_id'].'_'.$vo['code'])}：</label>
+                        <select class="form-control miniinput2" name="{$vo.code}" selected="{$vo.value}">
+
+                            <foreach name="vo.store_range" item="vo1">
+                                <option value="{$vo1}">{$vo1}</option>
+                            </foreach>
+                        </select>
+
+                    </if>
+
+
+                </foreach>
+
+
+                <button type="submit" class="btn btn-info ">{$Think.lang._update_}{$Think.lang.Picture}{$Think.lang.Config}</button>
+
+            </div>
+        </form>
+
+
+    </empty>
+
+
+
+
+
+
+
+
     <include file="Public:Copy" /></div>
 <script src="[!Public]Js/jquery.form.js"></script> 
 <script language="javascript" type="text/javascript">
@@ -33,7 +66,7 @@
 				 Mini = "<div class='alert alert-danger'>"+data.info+"</div>";
 				 }
 		  $('#result').html(Mini).show();
-		  location=location;
+		  //location=location;
 		  setTimeout(function(){$('#result').html('').fadeOut();},3000);
 		 
 		  },

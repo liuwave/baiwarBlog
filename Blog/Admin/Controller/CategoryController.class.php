@@ -43,7 +43,7 @@ class CategoryController extends CommonController {
              $this->error(L('error_success'));
         } 
         }else{
-        $this->error($Form->getError());
+            $this->error($Form->getError());
         }
     }
  

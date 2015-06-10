@@ -18,7 +18,6 @@ use Think\Controller;
 
             $this->user=$data;
             $code=strtolower(CONTROLLER_NAME);
-
             $this->assign("settingArray",get_websit_config_by_code($code));
             //var_dump($code);
 

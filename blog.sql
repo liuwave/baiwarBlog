@@ -1,19 +1,20 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50616
+Source Server         : localhost_3306exit 
+Source Server Version : 50516
 Source Host           : localhost:3306
 Source Database       : blog
 
 Target Server Type    : MYSQL
-Target Server Version : 50616
+Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2015-06-09 20:34:38
+Date: 2015-06-10 11:23:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
 -- ----------------------------
 -- Table structure for `l_admin`
 -- ----------------------------
@@ -66,12 +67,15 @@ CREATE TABLE `l_category` (
   `urlname` varchar(255) DEFAULT NULL,
   `cdescription` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_category
 -- ----------------------------
-INSERT INTO `l_category` VALUES ('1', '0', '上海故事', 'shanghai', 'soo');
+INSERT INTO `l_category` VALUES ('2', '0', '公司新闻', 'news', '公司及行业的发展动态');
+INSERT INTO `l_category` VALUES ('3', '0', '公司简介', 'intro', '公司的简要介绍');
+INSERT INTO `l_category` VALUES ('4', '0', '苜草素', 'mucaosu', '苜草素介绍');
+INSERT INTO `l_category` VALUES ('5', '0', '联系方式', 'contact', '联系我们');
 
 -- ----------------------------
 -- Table structure for `l_comment`
@@ -104,11 +108,17 @@ CREATE TABLE `l_menu` (
   `url` varchar(255) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_menu
 -- ----------------------------
+INSERT INTO `l_menu` VALUES ('1', '首页', '/', '0');
+INSERT INTO `l_menu` VALUES ('2', '公司简介', '/list/3', '1');
+INSERT INTO `l_menu` VALUES ('3', '苜草素', '/list/4', '2');
+INSERT INTO `l_menu` VALUES ('4', '公司新闻', '/list/2', '3');
+INSERT INTO `l_menu` VALUES ('5', '产品系列', '', '4');
+INSERT INTO `l_menu` VALUES ('6', '联系方式', '', '5');
 
 -- ----------------------------
 -- Table structure for `l_page`
@@ -144,7 +154,7 @@ CREATE TABLE `l_website_config` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_website_config
@@ -160,6 +170,9 @@ INSERT INTO `l_website_config` VALUES ('9', '3', 'subtitle', 'text', '', '', '�
 INSERT INTO `l_website_config` VALUES ('10', '3', 'description', 'text', '', '', '这是白袜儿的个人主页', '4');
 INSERT INTO `l_website_config` VALUES ('11', '3', 'copy', 'text', '', '', '© 2014 www.baiwar.com All Rights Reserved.Theme by', '5');
 INSERT INTO `l_website_config` VALUES ('13', '3', 'keywords', 'text', '', '', '白娃儿', '3');
-INSERT INTO `l_website_config` VALUES ('14', '5', 'templateName', 'select', 'Default', '', 'Default', '1');
+INSERT INTO `l_website_config` VALUES ('14', '5', 'templateName', 'select', 'Default,Test', '', 'Default', '1');
 INSERT INTO `l_website_config` VALUES ('15', '5', 'PAGESIZE', 'number', '', '', '8', '1');
 INSERT INTO `l_website_config` VALUES ('16', '5', 'LISTPAGESIZE', 'number', '', '', '20', '1');
+INSERT INTO `l_website_config` VALUES ('17', '2', 'mi_exts', 'text', '', '', 'jpg,gif,png,jpeg', '1');
+INSERT INTO `l_website_config` VALUES ('18', '2', 'mi_maxSize', 'text', '', '', '3145728', '1');
+INSERT INTO `l_website_config` VALUES ('19', '0', '', '', '', '', '', '1');

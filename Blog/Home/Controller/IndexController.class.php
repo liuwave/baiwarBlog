@@ -16,7 +16,7 @@ class IndexController extends CommonController {
 
            $this->assign('list',$list);
 		   S('index',$list,10);
-		  $this->display('/Index');
+		  $this->display('Index');
    
     }
 

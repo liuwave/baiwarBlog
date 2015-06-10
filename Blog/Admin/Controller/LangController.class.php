@@ -5,9 +5,6 @@ class LangController extends CommonController
 {
     public function index()
     {
-
-
-
         $this->display('index');
     }
     public function Update()

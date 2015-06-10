@@ -165,28 +165,7 @@ textarea {
     color:#999;
     font-style:italic;
 }
-#nav-menu {
-    margin:10px 0 -1px;
-    padding:0;
-    float:right;
-}
-#nav-menu a {
-    display:inline-block;
-    margin-right:-1px;
-    padding:0 20px;
-    height:32px;
-    line-height:32px;
-    color:#444;
-}
-#nav-menu a:first-child {
-    border:none;
-}
-#nav-menu a:hover {
-}
-#nav-menu a.current {
-    border:1px solid #ddd;
-    border-bottom:1px solid #fff;
-}
+
 .site-search {
     display:none;
 }

@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="masthead">
+        <h3 class="text-muted">Project name</h3>
+        <nav>
+            <ul class="nav nav-justified">
+                <foreach name='menu' item='m'>
+                    <li>
+                        <a href="{:U($m['url'])}"  title="{$m.mname}">{$m.mname}</a>
+                    </li>
+                </foreach>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name"> <a id="logo" href="__ROOT__"> {$Think.config.blogname} </a>
+                <h1>{$Think.config.blogname}</h1>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <foreach name='menu' item='m'>
+                        <a class="
+                            <if condition='($m.mname eq 首页)'>current</if>"
+                           href="{:U($m['url'])}"  title="{$m.mname}">{$m.mname}</a>
+
+                    </foreach>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</header>

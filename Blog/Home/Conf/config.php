@@ -17,15 +17,15 @@ $config =  array(
 	'VIEW_PATH'=>'./Template/',
 	
 	'TMPL_PARSE_STRING'=>array(     
-	'[!TEMPLATE]'=>TMPL_PATH.'',
-	'[!CSS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Css/',
-	'[!JS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Js/',
-	'[!IMG]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Img/',
-	'--URL--'=>__ROOT__,
+        '[!TEMPLATE]'=>TMPL_PATH.'',
+        '[!CSS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Css/',
+        '[!JS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Js/',
+        '[!IMG]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Img/',
+        '--URL--'=>__ROOT__,
 	  ),
 	  
 
-	 'URL_HTML_SUFFIX'=>'html' ,
+	'URL_HTML_SUFFIX'=>'html' ,
 	'URL_MODEL'=>2,
     'URL_ROUTER_ON'=>true,
 	'URL_ROUTE_RULES' => array( 

@@ -110,8 +110,9 @@ return array(
 	
 	
 	/*Picture*/
-	'Format'=>'格式',
-	'Size'=>'大小',
+	'2_MI_EXTS'=>'格式',
+	'2_MI_MAXSIZE'=>'大小',
+
 	'Maximumwidth'=>'最大宽度',
 	'Maximumheight'=>'最大高度',
 	
