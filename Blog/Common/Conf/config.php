@@ -9,12 +9,12 @@ $array = array(
     'LANG_LIST'        => 'zh-cn,zh-tw,ja-jp,en-us', // 允许切换的语言列表 用逗号分隔
 	'DEFAULT_LANG'          =>  'zh-cn', 
 	'VAR_LANGUAGE'     => 'l', 
-	'rootPath' => './Uploads/Picture/', 
+	'rootPath' => PUBLIC_PATH.'Uploads/Picture/',
 	'DATA_BACKUP_PATH' => './Blog/Backups',
 	'DATA_BACKUP_PART_SIZE' => 20971520,
 	'DATA_BACKUP_COMPRESS' => 1,
 	'DATA_BACKUP_COMPRESS_LEVEL' => 9,
-	'MODULE_DENY_LIST'      =>  array('Common','Runtime'), 
+	'MODULE_DENY_LIST'      =>  array('Common','Runtime','Base'),
 	'MODULE_ALLOW_LIST'     =>  array('Home','Admin'),
 
     'WEBSITE_CONFIG_TAG' => "WEBSITE_CONFIG_TAG"

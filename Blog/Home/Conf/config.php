@@ -8,9 +8,7 @@ $dbconfig = require('./config.inc.php');
 $config =  array(
 
    'LOG_RECORD' => false,
-   'LOG_EXCEPTION_RECORD'  =>  false,   
-
-    
+   'LOG_EXCEPTION_RECORD'  =>  false,
 	'DEFAULT_THEME'    =>   $tempconfig['templateName'],
 
 
@@ -21,7 +19,8 @@ $config =  array(
         '[!CSS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Css/',
         '[!JS]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Js/',
         '[!IMG]'=>__ROOT__.'/Template/'.$tempconfig['templateName'].'/Style/Img/',
-        '--URL--'=>__ROOT__,
+        '__ROOT__'=>__ROOT__.'/',
+        '__PUBLIC__'=>__ROOT__.'/Public/',
 	  ),
 	  
 

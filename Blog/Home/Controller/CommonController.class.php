@@ -5,10 +5,9 @@ use Think\Controller;
 class CommonController extends Controller{
 
     public function _initialize(){
-
-        $menu=M('menu')->order('sort ASC')->select();
-        $this->menu=$menu;
-
+        $this->menu=get_menu();
+        //var_dump(get_menu());
+        //$this->assign("menu",get_menu());
         C(get_website_config());
 
 

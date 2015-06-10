@@ -1,17 +1,29 @@
 
 <div class="container">
     <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
-        <nav>
-            <ul class="nav nav-justified">
-                <foreach name='menu' item='m'>
-                    <li>
-                        <a href="{:U($m['url'])}"  title="{$m.mname}">{$m.mname}</a>
-                    </li>
-                </foreach>
 
-            </ul>
-        </nav>
+        <div class="nav">
+            <a href="__ROOT__">
+                <img src="__PUBLIC__dist/image/logo.gif"/>
+            </a>
+            <a class="pull-right">
+                <img  src="__PUBLIC__dist/image/tel.gif"/>
+            </a>
+        </div>
     </div>
+
+
 </div>
 
+<div class="masthead-nav">
+    <nav>
+        <ul class="nav nav-justified">
+            <foreach name='menu' item='m'>
+                <li class="<if condition='$m.active eq 1'>active</if>">
+                    <a href="{$m.url}" title="{$m.name}">{$m.name}</a>
+                </li>
+            </foreach>
+
+        </ul>
+    </nav>
+</div>

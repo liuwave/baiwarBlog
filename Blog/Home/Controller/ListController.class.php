@@ -21,6 +21,6 @@ class ListController extends CommonController {
 
 		$this->list=$list;
 	
-		$this->display('/list');
+		$this->display();
     }
 }
