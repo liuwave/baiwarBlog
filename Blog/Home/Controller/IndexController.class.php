@@ -13,7 +13,6 @@ class IndexController extends CommonController {
    	       $show = $Page->show();
 	       $this->assign('page',$show);
 	       $list=$Blog->relation(true)->order('aid DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
-
            $this->assign('list',$list);
 		   S('index',$list,10);
 		  $this->display('Index');

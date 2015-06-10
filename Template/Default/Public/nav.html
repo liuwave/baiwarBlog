@@ -15,26 +15,3 @@
     </div>
 </div>
 
-
-
-
-<header id="header" class="clearfix">
-    <div class="container">
-        <div class="col-group">
-            <div class="site-name"> <a id="logo" href="__ROOT__"> {$Think.config.blogname} </a>
-                <h1>{$Think.config.blogname}</h1>
-            </div>
-            <div>
-                <nav id="nav-menu" class="clearfix">
-                    <foreach name='menu' item='m'>
-                        <a class="
-                            <if condition='($m.mname eq 首页)'>current</if>"
-                           href="{:U($m['url'])}"  title="{$m.mname}">{$m.mname}</a>
-
-                    </foreach>
-                </nav>
-
-            </div>
-        </div>
-    </div>
-</header>
