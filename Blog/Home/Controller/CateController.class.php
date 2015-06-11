@@ -9,7 +9,7 @@ class CateController extends CommonController {
 		
 		$Blog=M('category');
 		
-		p($name);
+		//p($name);
 		
 	
 		
@@ -17,7 +17,7 @@ class CateController extends CommonController {
 		
 		$cates = $Blog->where("urlname ='$name'")->find();
 		$this->cates=$cates;
-		p($list);
+		//p($list);
 		
 	
 
@@ -42,6 +42,6 @@ class CateController extends CommonController {
 		
 		//S('List',$list,10);
 	
-		$this->display('/cates');
+		$this->display();
     }
 }

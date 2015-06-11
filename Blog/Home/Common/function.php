@@ -13,22 +13,20 @@ function get_menu($position = "top") {
 
     $res=M("Menu")
         ->where(array("is_show"=>1,"position"=>$position))
-        ->order('sort ASC')
+        ->order('sort_order ASC')
         ->select();
     $cur_url =$_SERVER['REQUEST_URI'];
     $noindex = false;
     $navlist = array();
 
     foreach ($res as $key => $row) {
-
-        //todo 数据库menu中添加 cname
-        $url=empty($row["is_cates"])?__ROOT__."/".ltrim($row['url'],"/"):U('cate/'.$row['cname']);
+        $url=__ROOT__."/".ltrim($row['url'],"/");
         $navlist[] = array(
             'name' => $row['name'],
             'is_open_new' => $row['is_open_new'],
             'url' => $url,
-            'cname' => $row['cname'],
-            'is_cates'=>$row['is_cates'],
+            'category_urlname' => $row['category_urlname'],
+            'type'=>$row['type'],
         );
     }
     /* 遍历自定义是否存在currentPage */
@@ -40,11 +38,12 @@ function get_menu($position = "top") {
 
 
 
+    //判断单页面
     foreach ($navlist as $k => $v) {
         //$condition = empty($ctype) ? (strpos($cur_url, $v['url']) === 0) : (strpos($cur_url, $v['url']) === 0 && strlen($cur_url) == strlen($v['url']));
 
         $condition =
-            empty($v['is_cates']) &&
+            empty($v['type']) &&
             stripos($cur_url, $v['url']) === 0 &&
             strlen($cur_url) == strlen($v['url']) &&
             !$noindex;
@@ -55,16 +54,26 @@ function get_menu($position = "top") {
             //continue;
         }
     }
-
+// 判断子目录
     if($noindex==false){
         foreach($navlist as $k => $v){
-            //todo 判断$v["cname"] 是否为空
-            if(!empty($v['is_cates']) && stripos($cur_url,$v["cname"])!==false && !$noindex){
+            if(!empty($v['type']) && !empty($v["category_urlname"]) && stripos($cur_url,$v["category_urlname"])!==false && !$noindex){
                 $navlist[$k]['active'] = 1;
                 $noindex = true;
             }
         }
     }
+//判断CONTROLLER_NAME
+    if($noindex==false){
+        foreach($navlist as $k => $v){
+            //todo 判断$v["cname"] 是否为空
+            if(!empty($v['type'])  && stripos($cur_url,CONTROLLER_NAME)!==false && !$noindex){
+                $navlist[$k]['active'] = 1;
+                $noindex = true;
+            }
+        }
+    }
+
 
 
 

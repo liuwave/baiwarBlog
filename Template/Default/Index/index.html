@@ -43,41 +43,80 @@
 
 
 
+<div class="row container" id="main">
 
+    <div class="col-lg-4 col-md-4 ">
 
-
-
-
-
-
-
-
-
-
-
-
-<div id="body">
-  <div class="container">
-    <div class="col-group">
-      <div class="col-8" id="main">
-        <div class="res-cons">
-          <foreach name='list' item='list'>
-            <article class="post">
-              <h2 class="post-title"> <a href="{:U('/content/'.$list['aid'])}">{$list.title}</a> </h2>
-              </heaer>
-              <date class="post-meta"> {$list.time|date='F,d Y',###} | <a href="{:U('/List/'.$list['cid'])}">{$list.cname}</a> </date>
-              <div class="post-content"> {$list.content|htmlspecialchars_decode|subtext=300} </div>
-            </article>
-          </foreach>
-          {$page} </div>
-      </div>
-      <div id="secondary"> 
-        <include file="./Template/Default/single.html" />
-       </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>
+                    公司新闻
+                </span>
+                <a href="index.html" class="pull-right">更多</a>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>
+                    公司新闻
+                </span>
+                <a href="index.html" class="pull-right">更多</a>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>
+                    公司新闻
+                </span>
+                <a href="index.html" class="pull-right">更多</a>
+            </div>
+
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>
+                    公司新闻
+                </span>
+                <a href="index.html" class="pull-right">更多</a>
+            </div>
+
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+    </div>
+
+
 </div>
-</div>
+
+
+
+
+
 <include file="Public:footer" />
 </body>
 </html>

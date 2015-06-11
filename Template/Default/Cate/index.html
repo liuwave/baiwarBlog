@@ -1,21 +1,6 @@
-﻿<include file="./Template/Default/header.html" />
+﻿<include file="Public:header" />
 <body>
-<header id="header" class="clearfix">
-  <div class="container">
-    <div class="col-group">
-      <div class="site-name"> <a id="logo" href="__ROOT__"> {$Think.config.blogname} </a>
-        <h1>{$Think.config.blogname}</h1>
-      </div>
-      <div>
-         <nav id="nav-menu" class="clearfix">
-          <foreach name='menu' item='m'> 
-          <a class="<if condition='($m.mname eq 博客)'>current<else /></if>" href="__ROOT__/baiwarBlog/{$m.url}"  title="{$m.mname}">{$m.mname}</a>
-          </foreach>
-         </nav>      
-         </div>
-    </div>
-  </div>
-</header>
+<include file="Public:nav"/>
 <div id="body">
   <div class="container">
     <div class="col-group">
@@ -51,8 +36,6 @@
     </div>
   </div>
 </div>
-<footer id="footer">
-  <div class="container"> &copy; 2014 <a rel="nofollow" href="http://pickcho.com/">Cho's</a>. </div>
-</footer>
+<include file="Public:footer"/>
 </body>
 </html>
