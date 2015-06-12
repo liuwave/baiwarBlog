@@ -6,7 +6,6 @@ class Category {
 	
 	
 	Static Public function zifenlei($cate, $html = '', $pid=0, $level=0){
-		
 	$arr=array();
 	foreach($cate as $v){
 		if($v['pid'] == $pid){

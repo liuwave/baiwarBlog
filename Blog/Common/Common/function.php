@@ -174,14 +174,13 @@ function update_website_config($name=null, $value=null) {
         $map["code"]=$name;
         $id = $WebsiteConfig->where($map)->getField('id');
         if($id){
-            if(!empty($value)){
-                $data["id"]=$id;
-                $data["value"]=$value;
-                if($WebsiteConfig->save($data)!==false){
-                    return true;
-                }
+            $data["id"]=$id;
+            $data["value"]=empty($value)?"":$value;
+            if($WebsiteConfig->save($data)!==false){
+                return true;
             }
         }
+
         return false;
     }
 

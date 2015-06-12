@@ -11,8 +11,8 @@ class ArticleModel extends RelationModel{
 			  'class_name'=>'category',
 			  'mapping_name'=>'category',
               'foreign_key'=>'cid',
-              'mapping_fields'=>'cname',
-			  'as_fields'=>'cname',
+              'mapping_fields'=>'name',
+			  'as_fields'=>'name',
 
 			 ),
 

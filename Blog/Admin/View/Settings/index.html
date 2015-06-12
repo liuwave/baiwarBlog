@@ -62,9 +62,10 @@
 			 Mini = "<div class='alert alert-success'>"+data.info+"</div>";
 			 }else{
 				 Mini = "<div class='alert alert-danger'>"+data.info+"</div>";
-				 }
+          }
+          //location=location;
 		  $('#result').html(Mini);
-		  setTimeout(function(){$('#result').html('').fadeOut();},3000);
+		    setTimeout(function(){$('#result').html('').fadeOut();},3000);
 		  },
 	  dataType:'json'
 	  }); 

@@ -22,7 +22,9 @@ $admin=$db->where('id=1')->getField('nickname');
                     <li><a href="{:U('/Admin/Article ')}">{$Think.lang.Article}</a></li>
                     <li><a href="{:U('/Admin/Category')}">{$Think.lang.Classify}</a></li>
                     <li><a href="{:U('/Admin/Comment ')}">{$Think.lang.Review}</a></li>
+                    <!--
                     <li><a href="{:U('/Admin/Page')}">{$Think.lang.One_page}</a></li>
+                    -->
                     <li class="divider"></li>
                     <li><a href="{:U('/Admin/Menu')}">{$Think.lang.Navigation}</a></li>
                 </ul>
@@ -33,9 +35,7 @@ $admin=$db->where('id=1')->getField('nickname');
                     <li><a href="{:U('/Admin/Picture')}">{$Think.lang.Picture}</a></li>
                     <li><a href="{:U('/Admin/Template')}">{$Think.lang.Surface}</a></li>
                     <li><a href="{:U('/Admin/Lang')}?l={$Think.config.DEFAULT_LANG}">{$Think.lang._Language_}</a></li>
-                     
-
-                </ul>
+                 </ul>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

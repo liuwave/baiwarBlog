@@ -217,8 +217,8 @@ input控制-->  .form-control {
 }
 /*高级*/
 #write_high {
-	display: none;
 }
+
 .form_datetime {
 	border-radius: 0px;
 	width: 20%;
@@ -229,10 +229,9 @@ input控制-->  .form-control {
 .overflow {
 	overflow: hidden;
 }
-#write_high_close {
+#write_high_open{
 	display: none;
-}
-/*文章*/
+}/*文章*/
 #border_top {
 	border-top: none;
 }
@@ -375,4 +374,17 @@ td, .hand {
 }
 h2.form-signin-heading {
 	font-family: "Microsoft JhengHei";
+}
+
+.upload-button .ke-button{
+    width:80px;
+
+}
+.upload-button{
+    float: left;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 0px;
 }

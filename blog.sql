@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2015-06-11 17:47:12
+Date: 2015-06-12 17:17:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,19 +42,22 @@ CREATE TABLE `l_article` (
   `cid` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `content` text,
-  `time` int(11) DEFAULT NULL,
+  `add_time` int(11) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   `tag` varchar(255) DEFAULT NULL,
   `summary` varchar(255) DEFAULT NULL,
-  `click` int(11) DEFAULT NULL,
-  `hot` int(11) DEFAULT NULL,
+  `click` int(11) DEFAULT '1',
+  `hot` int(11) DEFAULT '0',
+  `is_delete` tinyint(1) DEFAULT '0',
+  `is_show` tinyint(1) DEFAULT '1',
+  `is_top` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of l_article
 -- ----------------------------
-INSERT INTO `l_article` VALUES ('1', '1', '上海故事', '&lt;p&gt;\r\n	&lt;img width=&quot;200&quot; height=&quot;200&quot; style=&quot;width:555px;height:343px;&quot; alt=&quot;&quot; src=&quot;http://upload.17u.net/uploadpicbase/2012/06/16/aa/2012061623561752340.jpg&quot; /&gt; \r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	还没有来得及回味娇羞委婉的吴侬酥软，这一走神的时间，就跪拜在热情火辣的桑巴舞娘裙边。\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	我们到了，这个地方，叫上海。\r\n&lt;/p&gt;', null, null, null, null, '1', '1');
+INSERT INTO `l_article` VALUES ('1', '2', '上海故事', '&lt;p&gt;\r\n	&lt;img width=&quot;200&quot; height=&quot;200&quot; style=&quot;width:555px;height:343px;&quot; alt=&quot;&quot; src=&quot;http://upload.17u.net/uploadpicbase/2012/06/16/aa/2012061623561752340.jpg&quot; /&gt; \r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	还没有来得及回味娇羞委婉的吴侬酥软，这一走神的时间，就跪拜在热情火辣的桑巴舞娘裙边。\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n	我们到了，这个地方，叫上海。\r\n&lt;/p&gt;', null, '/baiwarBlog/Public/Uploads/image/20150612/20150612110440_10115.png', '', '', '1', '1', '0', '1', '0');
 
 -- ----------------------------
 -- Table structure for `l_category`
@@ -202,7 +205,7 @@ CREATE TABLE `l_website_config` (
   `type` varchar(10) NOT NULL DEFAULT '',
   `store_range` varchar(255) NOT NULL DEFAULT '',
   `store_dir` varchar(255) NOT NULL DEFAULT '',
-  `value` text NOT NULL,
+  `value` text,
   `sort_order` tinyint(3) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`),
@@ -218,14 +221,13 @@ INSERT INTO `l_website_config` VALUES ('3', '0', 'settings', 'group', '', '', ''
 INSERT INTO `l_website_config` VALUES ('4', '0', 'tags', 'group', '', '', '', '1');
 INSERT INTO `l_website_config` VALUES ('5', '0', 'template', 'group', '', '', '', '1');
 INSERT INTO `l_website_config` VALUES ('6', '1', 'DEFAULT_LANG', 'select', 'zh-cn,en-us,zh-tw,ja-jp', '', 'zh-cn', '1');
-INSERT INTO `l_website_config` VALUES ('8', '3', 'blogName', 'text', '', '', '白袜儿的个人主页', '1');
-INSERT INTO `l_website_config` VALUES ('9', '3', 'subtitle', 'text', '', '', '白袜儿的个人主页', '2');
-INSERT INTO `l_website_config` VALUES ('10', '3', 'description', 'text', '', '', '这是白袜儿的个人主页', '4');
-INSERT INTO `l_website_config` VALUES ('11', '3', 'copy', 'text', '', '', '© 2014 www.baiwar.com All Rights Reserved.Theme by', '5');
-INSERT INTO `l_website_config` VALUES ('13', '3', 'keywords', 'text', '', '', '白娃儿', '3');
+INSERT INTO `l_website_config` VALUES ('8', '3', 'blogName', 'text', '', '', '三丰原苜草素', '1');
+INSERT INTO `l_website_config` VALUES ('9', '3', 'subtitle', 'text', '', '', '苜草素生产、供求', '2');
+INSERT INTO `l_website_config` VALUES ('10', '3', 'description', 'text', '', '', '', '4');
+INSERT INTO `l_website_config` VALUES ('11', '3', 'copy', 'text', '', '', '© 2014 www.mucaosu.com All Rights Reserved.Theme by', '5');
+INSERT INTO `l_website_config` VALUES ('13', '3', 'keywords', 'text', '', '', '苜草素 三丰原 代替抗生素', '3');
 INSERT INTO `l_website_config` VALUES ('14', '5', 'templateName', 'select', 'Default,Test', '', 'Default', '1');
 INSERT INTO `l_website_config` VALUES ('15', '5', 'PAGESIZE', 'number', '', '', '8', '1');
 INSERT INTO `l_website_config` VALUES ('16', '5', 'LISTPAGESIZE', 'number', '', '', '20', '1');
 INSERT INTO `l_website_config` VALUES ('17', '2', 'mi_exts', 'text', '', '', 'jpg,gif,png,jpeg', '1');
 INSERT INTO `l_website_config` VALUES ('18', '2', 'mi_maxSize', 'text', '', '', '3145728', '1');
-INSERT INTO `l_website_config` VALUES ('19', '0', '', '', '', '', '', '1');
