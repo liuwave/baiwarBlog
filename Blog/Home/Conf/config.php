@@ -27,7 +27,15 @@ $config =  array(
 	'URL_HTML_SUFFIX'=>'html' ,
 	'URL_MODEL'=>2,
     'URL_ROUTER_ON'=>true,
-	'URL_ROUTE_RULES' => array( 
+	'URL_ROUTE_RULES' => array(
+     'news'=>'Home/Content/index?catename=news',
+     'intro'=>'Home/Content/index?catename=intro',
+     'tech'=>'Home/Content/index?catename=tech',
+     'server'=>'Home/Content/index?catename=server',
+     '/^news\/(\d*)$/'=>'Home/Content/index?catename=news&id=:1',
+     '/^intro\/(\d+)$/'=>'Home/Content/index?catename=intro&id=:1',
+     '/^tech\/(\d+)$/'=>'Home/Content/index?catename=tech&id=:1',
+     '/^server\/(\d+)$/'=>'Home/Content/index?catename=server&id=:1',
 	 '/^cate\/([A-Za-z0-9]+$)/' => 'Home/cate/index?name=:1',
 	 '/^page\/([A-Za-z0-9]+$)/' => 'Home/Page/index?name=:1',
 	 '/^other\/([A-Za-z0-9]+$)/' => 'Home/other/index?name=:1',

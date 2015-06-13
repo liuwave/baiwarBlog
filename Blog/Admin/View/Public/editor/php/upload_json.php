@@ -112,14 +112,19 @@ if (empty($_FILES) === false) {
 			mkdir($save_path);
 		}
 	}
-	$ymd = date("Ymd");
-	$save_path .= $ymd . "/";
-	$save_url .= $ymd . "/";
+	$ym = date("Ym");
+	$save_path .= $ym . "/";
+	$save_url .= $ym . "/";
 	if (!file_exists($save_path)) {
 		mkdir($save_path);
 	}
 	//新文件名
-	$new_file_name = date("YmdHis") . '_' . rand(10000, 99999) . '.' . $file_ext;
+
+
+	//$new_file_name = date("YmdHis") . '_' . rand(10000, 99999) . '.' . $file_ext;
+	$new_file_name = fast_uuid().".".$file_ext;
+
+
 	//移动文件
 	$file_path = $save_path . $new_file_name;
 	if (move_uploaded_file($tmp_name, $file_path) === false) {
@@ -139,4 +144,46 @@ function alert($msg) {
 	$json = new Services_JSON();
 	echo $json->encode(array('error' => 1, 'message' => $msg));
 	exit;
+}
+
+function fast_uuid($suffix_len=6){
+    //! 计算种子数的开始时间
+    $being_timestamp = strtotime(date("Y-m"));
+    session_start();
+
+    //var_dump(strtotime(date("Y-m")));
+    //var_dump(strtotime(date("Y-m-d")));
+
+    if(empty($_SESSION["id"])){
+        alert("没有权限,请登录后上传");
+    }
+    $id=time()-$being_timestamp;
+    $id.=$_SESSION["id"];
+/*
+    $time = explode(' ', microtime());
+    $id =sprintf('%04u', substr($time[0], 2, 6)).($time[1] - $being_timestamp);
+*/
+    if ($suffix_len > 0)
+    {
+        $id .= substr(sprintf('%010u', mt_rand()), 0, $suffix_len);
+    }
+
+    $s64="";
+    do{
+        $idlg=strlen($id) % 9 ==0 ? 9 : strlen($id) % 9;
+        $s64.=dec2s4(intval(substr($id,0,$idlg)));
+        $id=substr($id,$idlg);
+        $idlg=strlen($id);
+    }while($idlg!=0);
+
+    return $s64;
+}
+function dec2s4($dec) {
+    $base = '0123456789_$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $result = '';
+    do {
+        $result = $base[$dec % 64] . $result;
+        $dec = intval($dec / 64);
+    } while ($dec != 0);
+    return $result;
 }
