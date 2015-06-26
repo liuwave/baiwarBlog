@@ -1,11 +1,66 @@
+*{
+    /*font-family:arial, "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,arial, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;*/
+
+    /*font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;*/
+
+    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,
+    "Microsoft YaHei", "微软雅黑",
+    STXihei, "华文细黑",
+    serif;
+    /*font-family: "Biaodian Pro Sans CNS","Helvetica Neue",Helvetica,Arial,"Zhuyin Heiti","Han Heiti",sans-serif;*/
+}
+
+body {
+    padding-top: 20px;
+}
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+
 .container {
     width:1150px;
     padding:0 60px;
     margin:0 auto;
 }
-#main{
-    margin-top: 10px;
-}
 .panel{
     border-radius:0 ;
+}
+
+
+#body *{
+    border-radius: 0;
+}
+
+#body{
+    padding-top: 20px;
+    min-height: 500px;
+}
+
+#main .list-group-item{
+    border-left: 0;
+    border-right: 0;
+}
+#main .breadcrumb{
+    background-color: transparent;
+
+    display: inline-block;
+}
+#main h3{
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#main .media-heading{
+    color: #006a25;
+}
+
+#mainArticle  h3{
+    text-align: center;
+}
+#mainArticle .panel-heading{
+    text-align: center;
 }

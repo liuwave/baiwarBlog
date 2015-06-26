@@ -6,25 +6,29 @@ class ContentController extends CommonController {
     public function index(){
 
 		$id = I('get.id');
-		$field=	array('aid','title','content','time');
-		$blog=M('article')->field($field)->find($id);
-		$this->blog=$blog;
-		
-		
-	    $coms=M('article')->$id;
+		$field=	array('aid','cid','title','summary','content','add_time');
+		$article=M('article')->field($field)->find($id);
+        $Cates=D('category');
+        $currentCate=$Cates->getTree($article["cid"]);
+        $pName=empty($currentCate["parent_id"])?
+            $currentCate["name"]:
+            $currentCate->where(array("cid"=>$currentCate["parent_id"]))->getField('name');
 
-		$com=M('Comment')->where('aid='.$id)->order('time DESC')->select();
-        $this->assign('com', $com);
-		
-		
-		$db=M('comment');
-		$comcount = $db->where('aid='.$id)->count();
-        $this->assign('comcount',$comcount);
-		
-		
-		S('Content',$blog,10);
-		S('Content',$com,10);
-		$this->display('/Content');
+
+        $this->seo["title"].="_".$article["title"];
+        $this->seo["keywords"].=" {$pName} {$currentCate['name']}";
+        $this->seo["description"].=$article["summary"];
+        $this->assign($this->seo);
+
+        $this->assign("currentCate",$currentCate);
+        $this->assign("pName",$pName);
+        $this->assign("article",$article);
+
+
+
+
+
+		$this->display();
     }
 	public function add(){
 		

@@ -1,0 +1,21 @@
+<!--sidebar开始-->
+<div class="list-group">
+    <li  class="list-group-item ">
+        <h4>{$pName}</h4>
+    </li>
+    <empty name="currentCate.parent_id">
+
+        <a href="{:U('/'.$currentCate['urlname'])}" class="list-group-item ">
+            默认分类
+        </a>
+        <else />
+
+        <volist name="currentCate" id="vo">
+            <a href="{:U('/'.$vo['urlname'])}" class="list-group-item ">
+                {$vo.name}
+            </a>
+        </volist>
+
+    </empty>
+
+</div>

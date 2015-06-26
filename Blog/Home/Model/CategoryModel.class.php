@@ -24,8 +24,8 @@ class CategoryModel extends Model{
 
         /* 获取所有分类 */
         $map  = array('status' => 1);
-        $list = $this->field($field)->where($map)->order('sort')->select();
-        $list = list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_', $root = $id);
+        $list = $this->field($field)->where($map)->order('sort_order')->select();
+        $list = list_to_tree($list, $pk = 'cid', $pid = 'parent_id', $child = '_', $root = $id);
         
         /* 获取返回数据 */
         if(isset($info)){ //指定分类则返回当前分类极其子分类
@@ -35,5 +35,10 @@ class CategoryModel extends Model{
         }
 
         return $info;
+    }
+
+    protected function info($id){
+        $info=$this->where(array("cid"=>$id))->find();
+        return $info?$info:array();
     }
 }

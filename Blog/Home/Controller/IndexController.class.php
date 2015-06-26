@@ -6,16 +6,13 @@ class IndexController extends CommonController {
 	
     public function index(){
 
-           $Blog=D('Article');
 
-           $count = $Blog->count();
-		   $Page =new \Think\Page($count,C('PAGESIZE'));		
-   	       $show = $Page->show();
-	       $this->assign('page',$show);
-	       $list=$Blog->relation(true)->order('aid DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
-           $this->assign('list',$list);
-		   S('index',$list,10);
-		  $this->display('Index');
+
+        $field=	array('aid','summary','img');
+        $article=M('article')->field($field)->find(8);
+        $this->assign("intro",$article);
+
+		$this->display();
    
     }
 

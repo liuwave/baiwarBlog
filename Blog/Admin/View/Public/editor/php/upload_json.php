@@ -18,7 +18,7 @@ $save_path = $php_path . '../../../../../../Public/Uploads/';
 //文件保存目录URL
 //$save_url = $php_url . '../../../../../../Public/Uploads/';
 //todo
-$save_url='/baiwarBlog/Public/Uploads/';
+$save_url='/Public/Uploads/';
 //定义允许上传的文件扩展名
 $ext_arr = array(
 	'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),

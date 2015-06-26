@@ -6,4 +6,4 @@ define("LANG_PATH", "./Blog/Lang/");
 define("TEMPLATE_PATH","./Template/");
 define('DIR_SECURE_FILENAME', 'index.html');
 define('DIR_SECURE_CONTENT', 'No direct script access allowed!');
-require './Core/ThinkPHP.php';
+require '../Thinkphp/ThinkPHP.php';

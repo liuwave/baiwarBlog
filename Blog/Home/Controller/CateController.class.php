@@ -4,17 +4,8 @@ use Think\Controller;
 class CateController extends CommonController {
 	
     public function index(){
-		
 	    $name = $_GET['name'];
-		
 		$Blog=M('category');
-		
-		//p($name);
-		
-	
-		
-		//$where =(array('urlname'=>$name));
-		
 		$cates = $Blog->where("urlname ='$name'")->find();
 		$this->cates=$cates;
 		//p($list);
@@ -33,15 +24,7 @@ class CateController extends CommonController {
 		$field=	array('cname');
 		$cate=M('category')->field($field)->find($id);
 		$this->cate=$cate;
-		
-		
-		
-		
-		
-		
-		
-		//S('List',$list,10);
-	
+
 		$this->display();
     }
 }

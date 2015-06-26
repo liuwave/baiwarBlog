@@ -28,22 +28,23 @@ $config =  array(
 	'URL_MODEL'=>2,
     'URL_ROUTER_ON'=>true,
 	'URL_ROUTE_RULES' => array(
-     'news'=>'Home/Content/index?catename=news',
-     'intro'=>'Home/Content/index?catename=intro',
-     'tech'=>'Home/Content/index?catename=tech',
-     'server'=>'Home/Content/index?catename=server',
      '/^news\/(\d*)$/'=>'Home/Content/index?catename=news&id=:1',
      '/^intro\/(\d+)$/'=>'Home/Content/index?catename=intro&id=:1',
      '/^tech\/(\d+)$/'=>'Home/Content/index?catename=tech&id=:1',
      '/^server\/(\d+)$/'=>'Home/Content/index?catename=server&id=:1',
-	 '/^cate\/([A-Za-z0-9]+$)/' => 'Home/cate/index?name=:1',
+
+     'news'=>'Home/List/index?name=news',
+     'intro'=>'Home/List/index?name=intro',
+     'tech'=>'Home/List/index?name=tech',
+     'server'=>'Home/List/index?name=server',
+
 	 '/^page\/([A-Za-z0-9]+$)/' => 'Home/Page/index?name=:1',
 	 '/^other\/([A-Za-z0-9]+$)/' => 'Home/other/index?name=:1',
 	 '/^content\/(\d+)$/' => 'Home/Content/index?id=:1',
 	 '/^list\/(\d+)$/' => 'Home/List/index?id=:1',
+     '/^list\/([A-Za-z0-9]+$)/' => 'Home/List/index?name=:1',
 	 ),
 	'DEFAULT_FILTER' => 'htmlspecialchars,stripslashes',
-	
 	'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
 	'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__
 	'TOKEN_TYPE'    =>    'md5',  //令牌哈希验证规则 默认为MD5\

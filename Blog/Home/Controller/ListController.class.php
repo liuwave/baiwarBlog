@@ -4,23 +4,36 @@ use Think\Controller;
 class ListController extends CommonController {
 	
     public function index(){
-		
 
-		$id = I('get.id');
-		$Blog=M('article');
-	    $count = $Blog->count();
-		$Page =new \Think\Page($count,C('LISTPAGESIZE'));		
-		$list=$Blog->where(array('cid'=>$id))->limit($Page->firstRow.','.$Page->listRows)->select();
+        $cid = I('get.id');
+        $Cates=D('category');
+        if(empty($cid)){
+            $urlname = $_GET['name'];
+            $cid = $Cates->where(array("urlname"=>$urlname))->getField('cid');
+        }
 
-   	     $show = $Page->show();
+
+        $where["is_show"]=1;
+        if(!empty($cid)){
+            $where["cid"]=$cid;
+        }
+
+		$Article=M('article');
+	    $count = $Article->where($where)->count();
+		$Page =new \Think\Page($count,C('LISTPAGESIZE'));
+		$list=$Article->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+   	    $show = $Page->show();
 	    $this->assign('page',$show);
+        $currentCate=$Cates->getTree($cid);
 
-		$field=	array('cname');
-		$cate=M('category')->field($field)->find($id);
-		$this->cate=$cate;
 
-		$this->list=$list;
-	
+        $pName=empty($currentCate["parent_id"])?
+            $currentCate["name"]:
+            $currentCate->where(array("cid"=>$currentCate["parent_id"]))->getField('name');
+
+        $this->assign("currentCate",$currentCate);
+        $this->assign("pName",$pName);
+        $this->assign("list",$list);
 		$this->display();
     }
 }

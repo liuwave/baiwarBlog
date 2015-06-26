@@ -11,7 +11,7 @@ $admin=$db->where('id=1')->getField('nickname');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{:U('/Admin')}">{$Think.lang._Admin_Logo_}</a>
+        <a class="navbar-brand" href="{:U('/Admin')}">三丰原科技</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -43,7 +43,6 @@ $admin=$db->where('id=1')->getField('nickname');
                 <ul class="dropdown-menu">
                     <li><a href="__ROOT__">{$Think.lang.Into_web}</a></li>
                     <li><a href="{:U('Index/cache_del')}">{$Think.lang.Update_cache}</a></li>
-                    <li id="aboutus_menu"><a href="{:U('/Admin/About')}">{$Think.lang.About}</a></li>
                     <li class="divider"></li>
                     <li><a href="#" data-toggle="modal" data-target="#password">{$Think.lang.Set_Password}</a></li>
                 </ul>

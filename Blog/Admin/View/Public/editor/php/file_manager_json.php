@@ -15,7 +15,7 @@ $php_url = dirname($_SERVER['PHP_SELF']) . '/';
 //根目录路径，可以指定绝对路径，比如 /var/www/attached/
 $root_path = $php_path . './../../../../../../Public/Uploads/';
 //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-$root_url =  '/baiwarBlog/Public/Uploads/';
+$root_url =  '/Public/Uploads/';
 //图片扩展名
 $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
 
