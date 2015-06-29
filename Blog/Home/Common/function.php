@@ -138,3 +138,30 @@ function list_to_tree($list, $pk = 'cid', $pid = 'parent_id', $child = '_', $roo
     }
     return $re;
 }
+
+
+function get_article_by_cate($cate=0){
+    $cates=array();
+    $Cate=M("Category");
+    if($cate===0){
+        $cateMap["parent_id"]=0;
+    }else if(is_numeric($cate)){
+        $cates[]=$cateMap["parent_id"]=$cate;
+    }else{
+        $c=$Cate->where(array("urlname"=>$cate))->getField("cid");
+        if($c){
+            $cates[]=$cateMap["parent_id"]=$c;
+        }else{
+            return false;
+        }
+    }
+
+    $childCates=$Cate->where($cateMap)->getField("cid",true);
+    if($childCates)
+        $cates=array_merge($childCates,$cates);
+
+    $map['cid']  = array('in',$cates);
+    $field="aid,cid,title";
+    return M("Article")->where($map)->field($field)->select();
+
+}
