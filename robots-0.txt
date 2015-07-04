@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /Blog
+Disallow: /Template
+Disallow: /Admin
+Disallow: /admin

@@ -3,8 +3,16 @@
 <head>
     <include file="Public/header" />
     <style>
-        #main .panel{
-            height: 200px;
+
+        #main .panel,
+        #panelPic img{
+            height: 300px;
+        }
+        #main .list-group-item{
+            border-left: 0;
+            border-right: 0;
+            padding: 5px 3px;
+            font-size: 16px;
         }
         #main .index-panel{
             padding-left: 5px;
@@ -13,15 +21,16 @@
         #panelPic .panel-body {
             padding: 0px;
         }
-        #panelPic img{
-            height: 200px;
+        #main .index-panel .panel-heading a,
+        #main .index-panel .panel-heading a:hover{
+            color: #FEFEFE;
         }
+
         #main p {
             font-size: 16px;
         }
-        #main .list-group-item{
-            padding: 1px 3px;
-        }
+
+
     </style>
 </head>
 <body>
@@ -55,8 +64,10 @@
 
 <div id="body">
     <div class="row container" id="main">
-        <div class="col-lg-4 col-md-4 index-panel " id="panelPic">
-            <div class="panel panel-default">
+        <!--<button class="btn btn-primary active">xxxxx</button>-->
+
+        <div class="col-lg-6 col-md-6 index-panel " id="panelPic">
+            <div class="panel ">
                 <div class="panel-body">
                     <!--幻灯片 start-->
                     <div id="carousel-sub" class="carousel slide" data-ride="carousel">
@@ -94,36 +105,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-8 col-md-8 index-panel">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                <span>
-                    公司简介
-
-                </span>
-                    <a href="{:U('intro/'.$intro['aid'])}" class="pull-right">更多</a>
-                </div>
-                <div class="panel-body">
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="{:U('intro/'.$intro['aid'])}">
-                                <img class="media-object" src="{$intro.img}" width="140px">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$intro.summary|msubstr=0,180}
-                                <a href="{:U('intro/'.$intro['aid'])}">更多</a>
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 index-panel">
-            <div class="panel panel-default">
+        <div class="col-lg-6 col-md-6 index-panel">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                 <span>
                     新闻中心
@@ -133,33 +116,41 @@
                 <div class="panel-body">
                     <div class="list-group">
                         <volist name="news" id="vo">
-                            <a href="{:U('news/'.$vo['aid'])}" class="list-group-item">
-                                {$vo.title|msubstr=0,20}
-                            </a>
+                                <a href="{:U('news/'.$vo['aid'])}" class="list-group-item" title="{$vo.title}">
+                                    {$vo.title|msubstr=0,30}
+                                </a>
                         </volist>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 index-panel">
 
-            <div class="panel panel-default">
+        <div class="col-lg-6 col-md-6 index-panel">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                 <span>
                     技术研发
                 </span>
-                    <a href="index.html" class="pull-right">更多</a>
+                    <a href="{:U('/tech')}" class="pull-right">更多</a>
                 </div>
 
                 <div class="panel-body">
+                    <div class="list-group">
+                        <volist name="tech" id="vo">
+                                <a href="{:U('tech/'.$vo['aid'])}" class="list-group-item"  title="{$vo.title}">
+                                    {$vo.title|msubstr=0,30}
+                                </a>
 
+                        </volist>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 index-panel">
 
-            <div class="panel panel-default">
+        <div class="col-lg-6 col-md-6 index-panel">
+
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                 <span>
                     客户服务
@@ -168,6 +159,25 @@
                 </div>
 
                 <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 index-panel">
+            <div class="panel panel-primary">
+
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="{:U('intro/'.$intro['aid'])}">
+                                <img class="media-object" src="" width="140px">
+                            </a>
+                        </div>
+                        <div class="media-body">
+
+
+                        </div>
+                    </div>
 
                 </div>
             </div>

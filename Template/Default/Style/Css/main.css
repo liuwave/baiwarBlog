@@ -13,25 +13,17 @@
 body {
     padding-top: 20px;
 }
-
-.footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-}
-
 .container {
     width:1150px;
-    padding:0 60px;
+    padding:0 20px;
     margin:0 auto;
 }
 .panel{
     border-radius:0 ;
 }
 
-
-#body *{
+#body *,
+#footer *{
     border-radius: 0;
 }
 
@@ -40,27 +32,52 @@ body {
     min-height: 500px;
 }
 
-#main .list-group-item{
+#mainList .list-group-item{
     border-left: 0;
     border-right: 0;
 }
-#main .breadcrumb{
+#mainList .breadcrumb{
     background-color: transparent;
 
     display: inline-block;
 }
-#main h3{
+#mainList h3{
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
 }
-#main .media-heading{
-    color: #006a25;
+#mainList .media-heading{
+    color: #337ab7;
+}
+
+#mainList .panel-heading{
+    background-image: none;
+    background-color: #fff;
+}
+#mainList .media{
+    margin-top: 0px;
+}
+
+
+#mainArticle .panel-heading{
+    text-align: center;
+    background-image: none;
+    background-color: #fff;
+}
+#mainArticle .panel-heading blockquote,
+#mainList .panel-heading blockquote{
+    border: none;
+}
+
+#mainArticle .panel,
+#mainList .panel{
+    border: none;
 }
 
 #mainArticle  h3{
     text-align: center;
 }
-#mainArticle .panel-heading{
-    text-align: center;
+#mainArticle img{
+    max-width: 600px;
+    height: inherit;
 }

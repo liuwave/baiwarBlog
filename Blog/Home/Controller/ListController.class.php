@@ -21,7 +21,7 @@ class ListController extends CommonController {
 		$Article=M('article');
 	    $count = $Article->where($where)->count();
 		$Page =new \Think\Page($count,C('LISTPAGESIZE'));
-		$list=$Article->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$list=$Article->where($where)->order("is_top desc,add_time desc")->limit($Page->firstRow.','.$Page->listRows)->select();
    	    $show = $Page->show();
 	    $this->assign('page',$show);
         $currentCate=$Cates->getTree($cid);
@@ -30,6 +30,15 @@ class ListController extends CommonController {
         $pName=empty($currentCate["parent_id"])?
             $currentCate["name"]:
             $currentCate->where(array("cid"=>$currentCate["parent_id"]))->getField('name');
+
+
+
+        $keywordArr=explode(",",$this->seo["keywords"]);
+        $keywordArr[]=$pName;
+        $keywordArr[]=$currentCate["name"];
+        $this->seo["keywords"]=implode(",",array_unique($keywordArr));
+
+        $this->assign($this->seo);
 
         $this->assign("currentCate",$currentCate);
         $this->assign("pName",$pName);

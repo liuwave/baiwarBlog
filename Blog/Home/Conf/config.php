@@ -32,11 +32,14 @@ $config =  array(
      '/^intro\/(\d+)$/'=>'Home/Content/index?catename=intro&id=:1',
      '/^tech\/(\d+)$/'=>'Home/Content/index?catename=tech&id=:1',
      '/^server\/(\d+)$/'=>'Home/Content/index?catename=server&id=:1',
+     '/^product\/(\d+)$/'=>'Home/Product/detail?id=:1',
 
-     'news'=>'Home/List/index?name=news',
-     'intro'=>'Home/List/index?name=intro',
-     'tech'=>'Home/List/index?name=tech',
-     'server'=>'Home/List/index?name=server',
+     '/^news$/'=>'Home/List/index?name=news',
+     '/^intro$/'=>'Home/List/index?name=intro',
+     '/^tech$/'=>'Home/List/index?name=tech',
+     '/^server$/'=>'Home/List/index?name=server',
+     '/^product$/'=>'Home/Product/index',
+
 
 	 '/^page\/([A-Za-z0-9]+$)/' => 'Home/Page/index?name=:1',
 	 '/^other\/([A-Za-z0-9]+$)/' => 'Home/other/index?name=:1',

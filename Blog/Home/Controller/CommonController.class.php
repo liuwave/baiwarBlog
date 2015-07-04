@@ -18,7 +18,7 @@ class CommonController extends Controller {
 
 
         $this->seo["title"]=C("blogname")."_".C("subtitle");
-        $this->seo["keywords"]=C("keywords")." ";
+        $this->seo["keywords"]=C("keywords");
         $this->seo["description"]=C("description");
 
         $this->assign($this->seo);

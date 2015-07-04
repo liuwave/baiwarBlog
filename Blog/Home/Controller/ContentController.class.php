@@ -6,7 +6,7 @@ class ContentController extends CommonController {
     public function index(){
 
 		$id = I('get.id');
-		$field=	array('aid','cid','title','summary','content','add_time');
+		$field=	array('aid','cid','title','tag','summary','content','add_time');
 		$article=M('article')->field($field)->find($id);
         $Cates=D('category');
         $currentCate=$Cates->getTree($article["cid"]);
@@ -16,7 +16,14 @@ class ContentController extends CommonController {
 
 
         $this->seo["title"].="_".$article["title"];
-        $this->seo["keywords"].=" {$pName} {$currentCate['name']}";
+        $keywordArr=explode(",",$this->seo["keywords"]);
+        if(!empty($article["tag"])){
+            $keywordArr1=explode(" ",$article["tag"]);
+            $keywordArr=array_merge($keywordArr,$keywordArr1);
+        }
+        $keywordArr[]=$pName;
+        $keywordArr[]=$currentCate["name"];
+        $this->seo["keywords"]=implode(",",array_unique($keywordArr));
         $this->seo["description"].=$article["summary"];
         $this->assign($this->seo);
 

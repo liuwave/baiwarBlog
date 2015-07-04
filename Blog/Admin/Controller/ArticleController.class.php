@@ -46,9 +46,9 @@ class ArticleController extends CommonController
         if(empty($data['title']) || empty($data['content'])){
             $this->error("标题或内容不能为空");
         }
-
-
-
+        if(empty($data['summary'])){
+            $data['summary']=msubstr(strip_tags($data['content']),0,500);
+        }
 
         if ($article->add($data)) {
             $this->success(L('Write_success'));

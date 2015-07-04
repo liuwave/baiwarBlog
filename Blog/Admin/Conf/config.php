@@ -5,5 +5,7 @@ return array(
     'DEFAULT_FILTER'        => 'htmlspecialchars'
 	  ),
     'TMPL_PATH'=>"",
+    'URL_HTML_SUFFIX'=>'html' ,
+    'URL_MODEL'=>2,
 );
 

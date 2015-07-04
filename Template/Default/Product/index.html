@@ -2,6 +2,13 @@
 <html>
 <head>
     <include file="Public/header" />
+    <style>
+        #mainProduct .list-group,
+        #mainProduct .list-group-item{
+            border: none;
+            box-shadow:none;
+        }
+    </style>
 </head>
 <body>
 <include file="Public/nav" />
@@ -9,10 +16,48 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 col-md-3 sidebar">
-                <include file="Public/sidebar" />
-            </div>
-            <div class="col-lg-9 col-sm-9 col-md-9" id="main">
+                <div class="list-group">
+                    <li class="list-group-item">
+                        <h4>产品中心</h4>
+                    </li>
+                    <li class="list-group-item">
+                        苜草素
+                    </li>
                 </div>
+                <include file="Public/contact" />
+            </div>
+            <div class="col-lg-9 col-sm-9 col-md-9" id="mainProduct">
+                <ul class="media-list list-group">
+                    <volist name="list" id="vo">
+
+                        <notempty name="vo.img">
+                            <div class="media-left ">
+                                <a href="{:U('product/'.$vo['pid'])}">
+                                    <img class="media-object" width="200" height="200" src="{$vo.img|default='/Public/dist/image/logo.gif'}" alt="{$vo.name}">
+                                </a>
+                            </div>
+                        </notempty>
+
+                        <div class="media-body">
+
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="{:U('product/'.$vo['pid'])}">
+                                        <h4 class="media-heading">{$vo.name}</h4>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">[产品规格]  </li>
+                                <li class="list-group-item">[保 质 期]  常温下2年</li>
+                                <li class="list-group-item">[生产企业] 德阳三丰原科技股份有限公司</li>
+                                <li class="list-group-item">
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=363615616&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:363615616:51" alt="点击询价" title="点击询价"/></a>
+                                </li>
+                            </ul>
+                        </div>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

@@ -140,7 +140,7 @@ function list_to_tree($list, $pk = 'cid', $pid = 'parent_id', $child = '_', $roo
 }
 
 
-function get_article_by_cate($cate=0){
+function get_article_by_cate($cate=0,$limit=5){
     $cates=array();
     $Cate=M("Category");
     if($cate===0){
@@ -156,12 +156,11 @@ function get_article_by_cate($cate=0){
         }
     }
 
-    $childCates=$Cate->where($cateMap)->getField("cid",true);
+    $childCates=$Cate->where($cateMap)->limit($limit)->getField("cid",true);
     if($childCates)
         $cates=array_merge($childCates,$cates);
 
     $map['cid']  = array('in',$cates);
     $field="aid,cid,title";
-    return M("Article")->where($map)->field($field)->select();
-
+    return M("Article")->where($map)->field($field)->order("is_top desc,add_time desc")->select();
 }
