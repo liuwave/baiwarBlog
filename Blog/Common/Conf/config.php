@@ -17,7 +17,8 @@ $array = array(
 	'MODULE_DENY_LIST'      =>  array('Common','Runtime','Base'),
 	'MODULE_ALLOW_LIST'     =>  array('Home','Admin'),
 
-    'WEBSITE_CONFIG_TAG' => "WEBSITE_CONFIG_TAG"
+    'WEBSITE_CONFIG_TAG' => "WEBSITE_CONFIG_TAG",
+    'DEFAULT_MODULE'       =>    'Home',
 );
 return array_merge($config,$array);
 ?> 

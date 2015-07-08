@@ -23,6 +23,7 @@ class ContentController extends CommonController {
         }
         $keywordArr[]=$pName;
         $keywordArr[]=$currentCate["name"];
+
         $this->seo["keywords"]=implode(",",array_unique($keywordArr));
         $this->seo["description"].=$article["summary"];
         $this->assign($this->seo);

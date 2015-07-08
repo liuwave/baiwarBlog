@@ -31,15 +31,15 @@
 
                 <div class="media-list">
                     <div class="media-left">
-                        <img class="media-object" width="300" height="300" src="{$product.img}" alt="{$product.name}">
+                        <img style="cursor:hand;cursor: pointer;" class="media-object" width="300" height="300" src="{$product.img}" alt="{$product.name}">
                     </div>
                     <div class="media-body">
 
                         <ul class="list-group">
                             <li class="list-group-item"><h3>{$product.name}</h3></li>
-                            <li class="list-group-item">[产品规格]  </li>
-                            <li class="list-group-item">[贮    藏]  请于常温、干燥、通风处保存。</li>
-                            <li class="list-group-item">[保 质 期]  常温下2年</li>
+                            <li class="list-group-item">[产品规格]  {$product.spec}</li>
+                            <li class="list-group-item">[贮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;藏]  请于常温、干燥、通风处保存。</li>
+                            <li class="list-group-item">[保&nbsp;&nbsp;质&nbsp;&nbsp;期]  常温下2年</li>
                             <li class="list-group-item">[生产企业] 德阳三丰原科技股份有限公司</li>
                             <li class="list-group-item">
 
@@ -65,5 +65,16 @@
     </div>
 </div>
 <include file="Public/footer"/>
+
+<script>
+    layer.config({
+        extend: 'extend/layer.ext.js'
+    });
+    layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+        layer.photos({
+            photos: '.media-left'
+        });
+    });
+</script>
 </body>
 </html>

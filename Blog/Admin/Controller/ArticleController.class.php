@@ -125,7 +125,7 @@ class ArticleController extends CommonController
 
             $result = $Form->save();
             if ($result) {
-                $this->success(L('success'));
+                $this->success(L('success'),U('/Admin/Article'));
             } else {
                 $this->error(L('error'));
             }
