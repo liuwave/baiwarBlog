@@ -116,11 +116,11 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true){
 }
 
 
-function list_to_tree($list, $pk = 'cid', $pid = 'parent_id', $child = '_', $root = 0){
-    //$list=is_array($list)?$list:(array) $list;
+function list_to_tree($list, $pk = 'cid', $pid_key = 'parent_id', $child = '_', $pid = 0){
+/*    //$list=is_array($list)?$list:(array) $list;
     $re=array();
     //todo 循环
-
+$list,$child="_",$pid = 0,$pk = 'id', $pid_key = 'parent_id'
     if(empty($list)){
         return false;
     }
@@ -136,7 +136,20 @@ function list_to_tree($list, $pk = 'cid', $pid = 'parent_id', $child = '_', $roo
             }
         }
     }
-    return $re;
+
+    return $re;*/
+    $arr=array();
+    foreach($list as $l){
+        if($l[$pid_key]==$pid){
+            $l[$child]=self::list_to_tree($list,$pk,$pid_key,$child,$l[$pk]);
+            if(!empty($l[$child]))
+                $arr[$l[$pk]]=$l;
+        }
+    }
+    return $arr;
+
+
+
 }
 
 

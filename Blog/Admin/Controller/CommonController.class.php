@@ -15,15 +15,10 @@ use Think\Controller;
             }
             $user=M('Admin');
             $data=$user->find($id);
-
             $this->user=$data;
             $code=strtolower(CONTROLLER_NAME);
             $this->assign("settingArray",get_websit_config_by_code($code));
             //var_dump($code);
-
-
-
-			
         }
         //排序\ソート\Sort  
         public function setHot($id, $hot)
