@@ -3,3 +3,4 @@ Disallow: /Template
 Disallow: /Blog
 Disallow: /Admin
 Disallow: /admin
+Sitemap:http://www.mucaosu.com/sitemap.xml

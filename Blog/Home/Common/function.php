@@ -120,9 +120,8 @@ function list_to_tree($list, $pk = 'cid', $pid_key = 'parent_id', $child = '_', 
     $arr=array();
     foreach($list as $l){
         if($l[$pid_key]==$pid){
-            $l[$child]=self::list_to_tree($list,$pk,$pid_key,$child,$l[$pk]);
-            if(!empty($l[$child]))
-                $arr[$l[$pk]]=$l;
+            $l[$child]=list_to_tree($list,$pk,$pid_key,$child,$l[$pk]);
+            $arr[$l[$pk]]=$l;
         }
     }
     return $arr;

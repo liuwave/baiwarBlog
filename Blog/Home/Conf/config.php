@@ -39,7 +39,7 @@ $config =  array(
      '/^tech$/'=>'Home/List/index?name=tech',
      '/^server$/'=>'Home/List/index?name=server',
      '/^product$/'=>'Home/Product/index',
-
+     '/^sitemap$/'=>'Home/Sitemap/index',
 
 	 '/^page\/([A-Za-z0-9]+$)/' => 'Home/Page/index?name=:1',
 	 '/^other\/([A-Za-z0-9]+$)/' => 'Home/other/index?name=:1',
