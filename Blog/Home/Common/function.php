@@ -117,27 +117,6 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true){
 
 
 function list_to_tree($list, $pk = 'cid', $pid_key = 'parent_id', $child = '_', $pid = 0){
-/*    //$list=is_array($list)?$list:(array) $list;
-    $re=array();
-    //todo 循环
-$list,$child="_",$pid = 0,$pk = 'id', $pid_key = 'parent_id'
-    if(empty($list)){
-        return false;
-    }
-    $re=array();
-    foreach($list as $k=>$l){
-        if($l[$pid]==$root){
-            $re[$l[$pk]]=$l;
-            unset($list[$k]);
-            if(!empty($list)){
-                $re1=list_to_tree($list,$pk,$pid,$child,$l[$pk]);
-                if($re1!==false)
-                    $re[$l[$pk]][$child]=$re1;
-            }
-        }
-    }
-
-    return $re;*/
     $arr=array();
     foreach($list as $l){
         if($l[$pid_key]==$pid){
