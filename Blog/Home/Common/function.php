@@ -147,11 +147,11 @@ function get_article_by_cate($cate=0,$limit=5){
         }
     }
 
-    $childCates=$Cate->where($cateMap)->limit($limit)->getField("cid",true);
+    $childCates=$Cate->where($cateMap)->getField("cid",true);
     if($childCates)
         $cates=array_merge($childCates,$cates);
 
     $map['cid']  = array('in',$cates);
     $field="aid,cid,title";
-    return M("Article")->where($map)->field($field)->order("is_top desc,add_time desc")->select();
+    return M("Article")->where($map)->field($field)->limit($limit)->order("is_top desc,add_time desc")->select();
 }
