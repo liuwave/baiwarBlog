@@ -26,7 +26,7 @@ ac2925
 .masthead-nav > nav{
     margin: auto;
     padding: 0 60px;
-    width:1150px;
+    max-width:1150px;
 }
 .nav-justified {
     background-color: #eee;
