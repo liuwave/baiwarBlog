@@ -79,16 +79,37 @@ body {
     height: inherit;
 }
 
-@media (min-width: 768px){
-
+#indexPage #main{
+    margin: auto;
 }
-@media (min-width: 992px){
-
+#indexPage  #main .panel,
+#indexPage #panelPic img{
+    height: 300px;
 }
-@media (min-width: 1200px){
-
+#indexPage #main .list-group-item{
+    border-left: 0;
+    border-right: 0;
+    padding: 5px 3px;
+    font-size: 16px;
+}
+#indexPage #main .index-panel{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#indexPage #panelPic .panel-body {
+    padding: 0px;
+}
+#indexPage #main .index-panel .panel-heading a,
+#indexPage #main .index-panel .panel-heading a:hover{
+    color: #FEFEFE;
 }
 
-@media (max-width: 767px){
-
+#indexPage #main p {
+    font-size: 16px;
+}
+#indexPage img {
+    max-width: 100%;
+}
+#indexPage .carousel img{
+    margin: 0 auto;
 }
