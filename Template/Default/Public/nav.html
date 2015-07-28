@@ -1,27 +1,30 @@
 <!--nav start-->
-    <div class="container">
-        <div class="masthead">
-
-            <div class="nav">
-                <a href="__ROOT__">
-                    <img src="__PUBLIC__dist/image/logo.gif"/>
-                </a>
-                <a class="pull-right">
-                    <img  src="__PUBLIC__dist/image/tel.gif"/>
-                </a>
-            </div>
-        </div>
+<div class="masthead">
+  <div class="container ">
+    <div class="nav">
+      <a href="__ROOT__">
+        <img src="__PUBLIC__dist/image/logo.gif"/>
+      </a>
+      <a class="pull-right" id="tel">
+        <img  src="__PUBLIC__dist/image/tel.gif"/>
+      </a>
     </div>
-    <div class="masthead-nav">
-        <nav>
-            <ul class="nav nav-justified">
-                <foreach name='menu' item='m'>
-                    <li class="<if condition='$m.active eq 1'>active</if>">
-                        <a href="{$m.url}" title="{$m.name}">{$m.name}</a>
-                    </li>
-                </foreach>
+  </div>
+</div>
 
-            </ul>
-        </nav>
-    </div>
+
+
+<div class="blog-masthead">
+  <div class="container ">
+    <nav class="blog-nav">
+      <foreach name='menu' item='m'>
+        <a class="blog-nav-item <if condition='$m.active eq 1'>active</if>" href="{$m.url}" title="{$m.name}">{$m.name}</a>
+      </foreach>
+    </nav>
+  </div>
+</div>
+<!--for mobile start-->
+
+
+<!--for mobile end-->
 <!--nav end-->

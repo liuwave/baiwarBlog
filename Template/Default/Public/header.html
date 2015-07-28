@@ -1,8 +1,13 @@
 <!--head start-->
-    <meta charset="UTF-8" />
-<!--
-    <meta name="viewport" content="width=1200, user-scalable=yes, initial-scale=2.5, maximum-scale=5.0, minimun-scale=1.0">
--->
+  <meta charset="UTF-8" />
+
+<if condition="is_mobile_agent()">
+  <meta name="viewport" content="width=device-width, user-scalable=no,target-densitydpi=high-dpi">
+  <else/>
+  <meta name="viewport" content="width=device-width, user-scalable=no,target-densitydpi=device-dpi">
+
+</if>
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>{$title}</title>
     <link rel="shortcut icon" href=" /favicon.ico" />
@@ -17,6 +22,10 @@
 
     <link rel="stylesheet" href="[!CSS]main.css">
     <link rel="stylesheet" href="[!CSS]nav.css">
+<if condition="is_mobile_agent()">
+  <link rel="stylesheet" href="[!CSS]mobile.css">
+</if>
+
     <!--<link rel="stylesheet" media="all" href="//cdn.staticfile.org/Han/3.0.0/han.min.css">-->
     <meta name="keywords" content="{$keywords}" />
     <meta name="description" content="{$description}">

@@ -1,15 +1,8 @@
 
-/* Customize the nav-justified links to be fill the entire space of the .navbar */
-/*
-c9302c
-ac2925
 
-
-2e6da4
-337ab7
-*/
-
-.masthead-nav{
+.blog-masthead,
+.blog-masthead  nav,
+.blog-masthead nav > a{
     margin-bottom: 0;
     font-weight: bold;
     color: #FFF;
@@ -23,93 +16,70 @@ ac2925
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac2925', endColorstr='#c9302c',GradientType=0 ); /* IE6-9 */
     background-repeat: repeat-x; /* Repeat the gradient */
 }
-.masthead-nav > nav{
-    margin: auto;
-    padding: 0 60px;
-    max-width:1150px;
-}
-.nav-justified {
-    background-color: #eee;
-}
-.nav-justified > li > a {
+.blog-masthead nav > a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 50px;
     height: 42px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: #FFF;
-    text-align: center;
-    background-color: #c9302c; /* Old browsers */
-    background-image: linear-gradient(to bottom, #c9302c 0px, #ac2925 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#c9302c), to(#ac2925));
-    background-image: -webkit-linear-gradient(top, #c9302c 0%, #ac2925 100%);
-    background-image:      -o-linear-gradient(top, #c9302c 0%, #ac2925 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(0%, #c9302c), to(#ac2925));
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac2925', endColorstr='#c9302c',GradientType=0 ); /* IE6-9 */
-    background-repeat: repeat-x; /* Repeat0 gradient */
+    float: left;
+    border-left: 1px solid #d5d5d5;
 }
-
-.nav-justified > .active > a,
-.nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus {
+.blog-masthead nav > a.active ,
+.blog-masthead nav > a.active:hover,
+.blog-masthead nav > a.active:focus {
     background-color: #ac2925;
     background-image: none;
 }
 
-.nav-justified > li > a:hover,
-.nav-justified > li > a:focus {
+.blog-masthead nav > a:hover,
+.blog-masthead nav> a:focus {
     background-color: #ac2925;
     color: #FFF;
 
 
 }
-.nav-justified > li:first-child > a {
+.blog-masthead nav > a:first-child{
     border-bottom: 0;
-}
-/*
-.nav-justified > li:first-child > a {
-    border-radius: 5px 5px 0 0;
-}
-.nav-justified > li:last-child > a {
-    border-bottom: 0;
-    border-radius: 0 0 5px 5px;
-}
-*/
-.nav-justified {
-    max-height: 52px;
-}
-.nav-justified > li {
-    border-left: 1px solid #d5d5d5;
-}
-.nav-justified :first-child {
     border-left: none;
 }
-.nav-justified>li {
-    display: table-cell;
-    width: 1%;
+
+.blog-nav{
+    width: 100%;
 }
 
 
+
+
+@media (max-width: 767px) {
+    .blog-masthead nav > a{
+        padding-left:10px ;
+        padding-right: 10px;
+    }
+}
 @media (min-width: 768px) {
-
-
-    /*
-    .nav-justified > li:first-child > a {
-        border-left: 0;
-
+    .blog-masthead nav > a{
+        padding-left:30px ;
+        padding-right: 30px;
     }
-    .nav-justified > li:last-child > a {
-        border-right: 0;
-
+}
+@media (min-width: 992px) {
+    .blog-masthead nav > a{
+        padding-left:48px ;
+        padding-right: 48px;
     }
-    */
+}
+@media (min-width: 1200px) {
+    .blog-masthead nav > a{
+        padding-left:58px ;
+        padding-right: 58px;
+    }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
 
-}
+
+
+
+
 .masthead,
 .marketing,
 .footer {
@@ -142,6 +112,7 @@ ac2925
 #footer .container{
     padding-top: 30px;
     padding-bottom: 30px;
+    margin: auto;
 }
 #footer .list-group{
     box-shadow: none;
@@ -154,7 +125,9 @@ ac2925
     border: none;
     background-color: transparent;
     color: #FEFEFE;
+    padding: 5px 0 0 0;
 }
+
 #footer a,
 #footer a:hover,
 #footer a:focus{

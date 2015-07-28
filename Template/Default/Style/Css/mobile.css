@@ -1,0 +1,17 @@
+
+    body{
+        margin-top: 0px;
+    }
+
+    #tel,.sidebar{
+        display: none;
+    }
+    #footer .container>div{
+        padding: 0 5px;
+    }
+    #indexProduct img{
+        height: 120px;
+    }
+/*    body>.container,body>.masthead-nav,body .sidebar{
+        display: none;
+    }*/
