@@ -55,11 +55,19 @@
         padding-left:10px ;
         padding-right: 10px;
     }
+    #mainArticle img {
+        max-width: 360px;
+        height: inherit;
+    }
 }
 @media (min-width: 768px) {
     .blog-masthead nav > a{
         padding-left:30px ;
         padding-right: 30px;
+    }
+    #mainArticle img {
+        max-width: 360px;
+        height: inherit;
     }
 }
 @media (min-width: 992px) {
@@ -67,11 +75,19 @@
         padding-left:48px ;
         padding-right: 48px;
     }
+    #mainArticle img {
+        max-width: 800px;
+        height: inherit;
+    }
 }
 @media (min-width: 1200px) {
     .blog-masthead nav > a{
         padding-left:58px ;
         padding-right: 58px;
+    }
+    #mainArticle img {
+        max-width: 800px;
+        height: inherit;
     }
 }
 

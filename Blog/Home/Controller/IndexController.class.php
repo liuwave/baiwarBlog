@@ -10,6 +10,13 @@ class IndexController extends CommonController {
 
         $field=	array('aid','summary','img');
         $article=M('article')->field($field)->find(8);
+        $product=M('Product')->select();
+        if($product){
+            $this->assign("product",$product);
+            $this->assign("productCount",count($product));
+        }
+
+
         $this->assign("intro",$article);
 //        var_dump(get_article_by_cate("news"));
         $this->assign("news",get_article_by_cate("news",7));

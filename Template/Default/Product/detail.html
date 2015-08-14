@@ -31,7 +31,7 @@
 
                 <div class="media-list">
                     <div class="media-left">
-                        <img style="cursor:hand;cursor: pointer;" class="media-object" width="300" height="300" src="{$product.img}" alt="{$product.name}">
+                        <img  style="cursor:hand;cursor: pointer;" class="media-object thumbnail" width="300" height="300" src="{$product.img}" alt="{$product.name}">
                     </div>
                     <div class="media-body">
 
@@ -40,7 +40,7 @@
                             <li class="list-group-item">[产品规格]  {$product.spec}</li>
                             <li class="list-group-item">[贮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;藏]  请于常温、干燥、通风处保存。</li>
                             <li class="list-group-item">[保&nbsp;&nbsp;质&nbsp;&nbsp;期]  常温下2年</li>
-                            <li class="list-group-item">[生产企业] 德阳三丰原科技股份有限公司</li>
+                            <li class="list-group-item">[生产企业] 四川蓝海洋苜草素科技有限公司</li>
                             <li class="list-group-item">
 
                                 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=363615616&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:363615616:51" alt="点击询价" title="点击询价"/></a>
@@ -52,11 +52,8 @@
                 </div>
                 <div class="media-list">
                     <div class="media-body">
-
-                        {$product.description}
-
+                        {$product.description|htmlspecialchars_decode}
                     </div>
-
                 </div>
 
 

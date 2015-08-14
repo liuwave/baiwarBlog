@@ -58,7 +58,9 @@ class SitemapController extends CommonController{
 
 
         foreach($product as $k=>$pdt){
-            $url=$siteurl.U('/product/'.$pdt['aid']);
+
+            $url=$siteurl.U('/product/'.$pdt['pid']);
+
             $lastMod=empty($pdt["add_time"])?date('Y-m-d'):date('Y-m-d',$pdt["add_time"]);
             echo "    <url>";
             echo "        <loc>$url</loc>\r\n";

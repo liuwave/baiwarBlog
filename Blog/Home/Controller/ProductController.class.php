@@ -8,7 +8,8 @@ class ProductController extends CommonController {
         $where['is_delete']=0;
         $Product=M('Product');
         $count = $Product->where($where)->count();
-        $Page =new \Think\Page($count,5);
+        $Page =new \Think\Page($count,15);
+
         $list=$Product->where($where)->order("add_time desc")->limit($Page->firstRow.','.$Page->listRows)->select();
         $show = $Page->show();
 
@@ -29,7 +30,6 @@ class ProductController extends CommonController {
         if(empty($pid)){
             //todo
         }
-
         $where["pid"]=$pid;
         $product=M("Product")->where($where)->find();
         if($product){

@@ -1,21 +1,21 @@
-*{
-    /*font-family:arial, "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,arial, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;*/
 
-    /*font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;*/
-
-    font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,
-    "Microsoft YaHei", "微软雅黑",
-    STXihei, "华文细黑",
-    serif;
-    /*font-family: "Biaodian Pro Sans CNS","Helvetica Neue",Helvetica,Arial,"Zhuyin Heiti","Han Heiti",sans-serif;*/
-}
 
 body {
     padding-top: 20px;
+    font-family: SimSun,"Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,
+    "Microsoft YaHei", "微软雅黑",
+    STXihei, "华文细黑",
+    serif;
 }
 
 .panel{
     border-radius:0 ;
+}
+.index-panel{
+    font-family: SimSun,"Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB,
+    "Microsoft YaHei", "微软雅黑",
+    STXihei, "华文细黑",
+    serif;
 }
 
 #body *,
@@ -112,4 +112,27 @@ body {
 }
 #indexPage .carousel img{
     margin: 0 auto;
+}
+#footer-carousel a{
+    margin-bottom: 0;
+}
+#indexProduct .thumbnail{
+    margin: 0;
+}
+#indexProduct{
+    border: #ebccd1 1px solid;
+    padding: 0;
+    margin-bottom: 20px;
+}
+#indexProduct #footerCarousel{
+    margin: 5px 2px;
+}
+#indexProduct #footerCarousel .carousel-control{
+    width: 5%;
+}
+#indexProduct #footerCarousel .carousel-indicators .active{
+    background:#ac2925;
+}
+#indexProduct #footerCarousel .carousel-indicators li{
+    border: 1px solid #ac2925;
 }
